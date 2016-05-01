@@ -40,6 +40,20 @@
             <artifactId>milyn-smooks-edi</artifactId>
             <version>1.6</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.milyn.edi.unedifact</groupId>
+            <artifactId>d96a-mapping</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.milyn.edi.unedifact</groupId>
+            <artifactId>d96a-binding</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+
+
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d98a-binding</artifactId>

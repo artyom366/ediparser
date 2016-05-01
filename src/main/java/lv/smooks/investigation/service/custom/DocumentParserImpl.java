@@ -1,4 +1,4 @@
-package lv.smooks.investigation.service;
+package lv.smooks.investigation.service.custom;
 
 import org.milyn.Smooks;
 import org.milyn.container.ExecutionContext;
@@ -16,9 +16,9 @@ import java.io.IOException;
 public class DocumentParserImpl implements DocumentParser {
 
     @Override
-    public void parseDocument() throws IOException, SAXException {
+    public void parseDocument(final String filePath) throws IOException, SAXException {
 
-        final byte[] messageIn = StreamUtils.readStream(new FileInputStream("C:\\edi\\input-message.edi"));
+        final byte[] messageIn = StreamUtils.readStream(new FileInputStream(filePath));
         System.out.println(new String(messageIn));
 
         final Smooks smooks = new Smooks("smooks-config.xml");

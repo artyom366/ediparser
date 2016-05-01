@@ -1,6 +1,9 @@
 package lv.smooks.investigation.service;
 
 
+import lv.smooks.investigation.service.custom.DocumentParser;
+import lv.smooks.investigation.service.d96a.D96AInterchangeParser;
+import lv.smooks.investigation.service.d98a.D98AInterchangeParser;
 import org.apache.commons.io.monitor.FileAlterationListener;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
@@ -18,7 +21,10 @@ public class FileAlterationListenerImpl  {
     private DocumentParser documentParser;
 
     @Autowired
-    private InterchangeParser interchangeParser;
+    private D98AInterchangeParser d98AInterchangeParser;
+
+    @Autowired
+    private D96AInterchangeParser d96AInterchangeParser;
 
     private final static String FILE_PATH = "C:\\edi";
     private static final long POOLING_INTERVAL = 5 * 1000;
@@ -50,10 +56,13 @@ public class FileAlterationListenerImpl  {
             }
 
             @Override
-            public void onFileCreate(File file) {
+            public void onFileCreate(final File file) {
 
                 try {
-                    interchangeParser.parseInterchange();
+                    //documentParser.parseDocument(file.getAbsolutePath());
+                    //d98AInterchangeParser.parseInterchange(file.getAbsolutePath());
+                    d96AInterchangeParser.parseInterchange(file.getAbsolutePath());
+
                 } catch (IOException | SAXException e) {
                     e.printStackTrace();
                 }
