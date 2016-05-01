@@ -60,8 +60,8 @@ public class FileAlterationListenerImpl  {
 
                 try {
                     //documentParser.parseDocument(file.getAbsolutePath());
-                    //d98AInterchangeParser.parseInterchange(file.getAbsolutePath());
-                    d96AInterchangeParser.parseInterchange(file.getAbsolutePath());
+                    d98AInterchangeParser.parseInterchange(file.getAbsolutePath());
+                    //d96AInterchangeParser.parseInterchange(file.getAbsolutePath());
 
                 } catch (IOException | SAXException e) {
                     e.printStackTrace();

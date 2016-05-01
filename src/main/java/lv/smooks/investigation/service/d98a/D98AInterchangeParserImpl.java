@@ -30,7 +30,7 @@ public class D98AInterchangeParserImpl implements D98AInterchangeParser {
         while ((line = reader.readLine()) != null) {
 
             if (line.contains("D:96A:UN")) {
-                line.replace("D:96A:UN", "D:98A:UN");
+                line = line.replace("D:96A:UN", "D:98A:UN");
             }
 
             line = line.replace("\n", "").replace("\r", "");
