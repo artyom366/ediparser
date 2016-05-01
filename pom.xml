@@ -28,7 +28,12 @@
         <dependency>
             <groupId>org.milyn</groupId>
             <artifactId>milyn-smooks-all</artifactId>
-            <version>1.6</version>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.milyn</groupId>
+            <artifactId>milyn-smooks-ejc</artifactId>
+            <version>1.4</version>
         </dependency>
         <dependency>
             <groupId>org.milyn</groupId>
@@ -37,21 +42,18 @@
         </dependency>
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
-            <artifactId>d96a-mapping</artifactId>
+            <artifactId>d98a-binding</artifactId>
             <version>1.4</version>
         </dependency>
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
-            <artifactId>d93a-mapping</artifactId>
+            <artifactId>d98a-mapping</artifactId>
             <version>1.4</version>
         </dependency>
-        <dependency>
-            <groupId>org.milyn.edi.unedifact</groupId>
-            <artifactId>d99a-mapping</artifactId>
-            <version>1.4</version>
-        </dependency>
+
+
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>

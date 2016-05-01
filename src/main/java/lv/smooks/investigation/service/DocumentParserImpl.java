@@ -16,20 +16,17 @@ import java.io.IOException;
 public class DocumentParserImpl implements DocumentParser {
 
     @Override
-    public void parseHeader() throws IOException, SAXException {
+    public void parseDocument() throws IOException, SAXException {
 
-        byte[] messageIn = StreamUtils.readStream(new FileInputStream("C:\\edi\\input-message.edi"));
+        final byte[] messageIn = StreamUtils.readStream(new FileInputStream("C:\\edi\\input-message.edi"));
         System.out.println(new String(messageIn));
 
-        Smooks smooks = new Smooks("smooks-config.xml");
-        ExecutionContext executionContext = smooks.createExecutionContext();
+        final Smooks smooks = new Smooks("smooks-config.xml");
+        final ExecutionContext executionContext = smooks.createExecutionContext();
 
-
-
-        JavaResult javaResult = new JavaResult();
-
+        final JavaResult javaResult = new JavaResult();
         smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(messageIn)), javaResult);
 
-        int i = 0;
+        System.out.println(javaResult.toString());
     }
 }

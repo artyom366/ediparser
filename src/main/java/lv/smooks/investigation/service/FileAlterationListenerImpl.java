@@ -5,7 +5,6 @@ import org.apache.commons.io.monitor.FileAlterationListener;
 import org.apache.commons.io.monitor.FileAlterationMonitor;
 import org.apache.commons.io.monitor.FileAlterationObserver;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
@@ -17,6 +16,9 @@ public class FileAlterationListenerImpl  {
 
     @Autowired
     private DocumentParser documentParser;
+
+    @Autowired
+    private InterchangeParser interchangeParser;
 
     private final static String FILE_PATH = "C:\\edi";
     private static final long POOLING_INTERVAL = 5 * 1000;
@@ -51,7 +53,7 @@ public class FileAlterationListenerImpl  {
             public void onFileCreate(File file) {
 
                 try {
-                    documentParser.parseHeader();
+                    interchangeParser.parseInterchange();
                 } catch (IOException | SAXException e) {
                     e.printStackTrace();
                 }

@@ -5,5 +5,5 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 
 public interface DocumentParser {
-    void parseHeader() throws IOException, SAXException;
+    void parseDocument() throws IOException, SAXException;
 }
